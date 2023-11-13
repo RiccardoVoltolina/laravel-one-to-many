@@ -15,6 +15,8 @@
                 <th class="text-center" scope="col">AUTORI</th>
                 <th class="text-center" scope="col">LINK GITHUB</th>
                 <th class="text-center" scope="col">LINK AL PROGETTO</th>
+                <th class="text-center" scope="col">TECNOLOGIA UTILIZZATA</th>
+
 
             </tr>
         </thead>
@@ -28,6 +30,8 @@
                     <td>{{$project->authors}}</td>
                     <td class="text-center"><a href="{{$project->githublink}}"><i class="fa-brands fa-github text-black"></i></a></td>
                     <td class="text-center"><a href="{{$project->projectlink}}"><i class="fa-solid fa-diagram-project text-black"></i></a></td>
+                    <td class="text-center">{{$project->type ? $project->type->type : 'Nessuna tecnologia selezionata'}}</td>
+
                 </tr>
 
         </tbody>

@@ -62,6 +62,9 @@ class ProjectController extends Controller
         $project->description = $request->description;
         $project->title = $request->title;
         $project->authors = $request->authors;
+        $project->type_id = $request->type_id;
+
+
         $project->save();
         return to_route('project.index');
 
