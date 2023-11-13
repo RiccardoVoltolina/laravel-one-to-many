@@ -10,7 +10,7 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'authors', 'projectlink', 'thumb', 'githublink'];
+    protected $fillable = ['title', 'description', 'authors', 'projectlink', 'thumb', 'githublink', 'type_id'];
 
     public function type(): BelongsTo
     {
