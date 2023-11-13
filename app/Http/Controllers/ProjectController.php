@@ -62,6 +62,9 @@ class ProjectController extends Controller
         $project->description = $request->description;
         $project->title = $request->title;
         $project->authors = $request->authors;
+
+        // aggiungo anche il campo del type_id, per inviarlo al dataase
+
         $project->type_id = $request->type_id;
 
 
@@ -83,7 +86,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::all();
+
+        return view('admin.projects.edit', compact('project', 'types'));
     }
 
     /**

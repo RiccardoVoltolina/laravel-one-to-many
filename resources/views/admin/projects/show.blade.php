@@ -30,6 +30,9 @@
                     <td>{{$project->authors}}</td>
                     <td class="text-center"><a href="{{$project->githublink}}"><i class="fa-brands fa-github text-black"></i></a></td>
                     <td class="text-center"><a href="{{$project->projectlink}}"><i class="fa-solid fa-diagram-project text-black"></i></a></td>
+
+                    {{-- seleziono la tabella type, relazionata precedentemente con il modello del progetto, se esiste, entro nel project->seleziono la tabella type e seleziono la colonna type --}}
+                    
                     <td class="text-center">{{$project->type ? $project->type->type : 'Nessuna tecnologia selezionata'}}</td>
 
                 </tr>

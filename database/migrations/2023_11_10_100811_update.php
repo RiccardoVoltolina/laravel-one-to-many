@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('projects', function (Blueprint $table) {
 
+            
             $table->longText('projectlink')->nullable();
             $table->longText('githublink')->nullable();
 
@@ -26,8 +27,12 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->longText('projectlink')->nullable();
-            $table->longText('githublink')->nullable();
+
+            // eseguo dropColumn per eliminare le 2 colonne dalla tabella
+
+            $table->dropColumn('projectlink');
+            
+            $table->dropColumn('githublink');
         });
     }
 };
