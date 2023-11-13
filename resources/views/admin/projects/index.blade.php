@@ -31,9 +31,13 @@
             <tbody>
                 @foreach ($projects as $project)
                     <tr>
-
                         <td>
+                            @if ($project->thumb)
                             <img width="100" src="{{ asset('storage/' . $project->thumb) }}">
+                            @else
+                            N/A
+                            @endif
+
                         </td>
 
                         <td scope="row">{{ $project->title }}</td>
@@ -66,12 +70,13 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">CANCELLA IL PROGETTO</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                ...
+                                                Sei sicuro di voler cancellare questo progetto?
+                                                Questa azione è irreversibile!
                                             </div>
                                             <div class="modal-footer">
                                                 <form action="{{ route('project.destroy', [$project->id]) }}" method="POST">

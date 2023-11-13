@@ -28,7 +28,11 @@ class ProjectController extends Controller
      */
     public function create()
     {
+
+        // passo tutti i dati del model Type alla variabile types
+
         $types = Type::all();
+        
         return view('admin.projects.create', compact('types'));
     }
 
@@ -86,6 +90,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
+        // passo tutti i dati del model Type alla variabile types
+
         $types = Type::all();
 
         return view('admin.projects.edit', compact('project', 'types'));

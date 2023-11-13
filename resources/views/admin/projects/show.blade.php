@@ -23,7 +23,11 @@
         <tbody>
                 <tr>
                     <td>
-                        <img width="100" src="{{ asset('storage/' . $project->thumb) }}">
+                        @if ($project->thumb)
+                            <img width="100" src="{{ asset('storage/' . $project->thumb) }}">
+                            @else
+                            N/A
+                            @endif
                     </td>
                     <td scope="row">{{$project->title}}</td>
                     <td>{{$project->description}}</td>
@@ -32,7 +36,7 @@
                     <td class="text-center"><a href="{{$project->projectlink}}"><i class="fa-solid fa-diagram-project text-black"></i></a></td>
 
                     {{-- seleziono la tabella type, relazionata precedentemente con il modello del progetto, se esiste, entro nel project->seleziono la tabella type e seleziono la colonna type --}}
-                    
+
                     <td class="text-center">{{$project->type ? $project->type->type : 'Nessuna tecnologia selezionata'}}</td>
 
                 </tr>
